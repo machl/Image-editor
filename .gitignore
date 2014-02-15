@@ -4,3 +4,12 @@
 *.jar
 *.war
 *.ear
+
+# Ant specific #
+dist/
+build/
+ 
+# Netbeans specific #
+core
+nbproject/*
+manifest.mf
