@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="compile" name="ZapoctakJavaGrafika">
+  <description>Upravy obrazku</description>
+
+  <property name="src" location="src"/>
+  <property name="classes" location="classes"/>
+  <property name="doc" location="javadoc"/>
+
+  <target name="init">
+    <mkdir dir="${classes}"/>
+  </target>
+
+  <target name="compile" depends="init" description="Compiles source">
+    <javac debug="true" includeantruntime="false" destdir="${classes}" srcdir="${src}" includes="**/*.java" classpath="${src}" />
+  </target>
+
+  <target name="run" depends="init,compile" description="Executes program">
+    <java fork="true" classname="zapoctakjavagrafika.Main" classpath="${classes}" />
+  </target>
+
+  <target name="clean" description="Deletes generated files">
+    <delete dir="${classes}"/>
+    <delete dir="${doc}"/>
+  </target>
+
+  <target name="javadoc" description="Generates javadoc documentation">
+    <mkdir dir="${doc}" />
+      <javadoc sourcepath="${src}" destdir="${doc}" overview="${src}/overview.html" encoding="utf-8" charset="utf-8" />
+  </target>
+
+</project>
