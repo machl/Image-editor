@@ -8,6 +8,7 @@
 # Ant specific #
 dist/
 build/
+classes/
  
 # Netbeans specific #
 core
